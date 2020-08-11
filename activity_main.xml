@@ -37,11 +37,11 @@
             android:contentDescription="@string/playorpauseDescription"
             android:src="@drawable/ic_play"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.429"
+            app:layout_constraintHorizontal_bias="0.435"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.258" />
+            app:layout_constraintVertical_bias="0.225" />
 
         <ImageButton
             android:id="@+id/NextSong"
@@ -54,7 +54,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.258" />
+            app:layout_constraintVertical_bias="0.225" />
 
         <ImageButton
             android:id="@+id/PrevSong"
@@ -63,25 +63,25 @@
             android:background="@drawable/custom_roundbutton"
             android:src="@drawable/ic_prev"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.261"
+            app:layout_constraintHorizontal_bias="0.278"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.258" />
+            app:layout_constraintVertical_bias="0.241" />
 
         <SeekBar
             android:id="@+id/Duration"
-            android:layout_width="350dp"
-            android:layout_height="15dp"
+            android:layout_width="357dp"
+            android:layout_height="19dp"
             android:backgroundTint="#FFF"
-            android:progressTint="#E53935"
+            android:progressTint="#00DC4D"
             android:thumbTint="#FFF"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.031"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.659" />
+            app:layout_constraintVertical_bias="0.763" />
 
         <TextView
             android:id="@+id/TimePassed"
@@ -91,11 +91,11 @@
             android:textColor="#FFF"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.04"
+            app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.923" />
+            app:layout_constraintVertical_bias="0.305" />
 
         <TextView
             android:id="@+id/DurationText"
@@ -105,25 +105,25 @@
             android:textColor="#FFF"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.813"
+            app:layout_constraintHorizontal_bias="0.781"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.929" />
+            app:layout_constraintVertical_bias="0.305" />
 
         <TextView
             android:id="@+id/SongName"
-            android:layout_width="273dp"
-            android:layout_height="20dp"
+            android:layout_width="280dp"
+            android:layout_height="15dp"
             android:text="  "
-            android:textColor="#FFFFFF"
             android:textAlignment="center"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.285"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.833" />
+            app:layout_constraintVertical_bias="0.927" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
