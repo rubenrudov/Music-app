@@ -9,6 +9,8 @@
     android:paddingVertical="14dp"
     android:textSize="20sp"
     android:text=" "
-    android:background="#2E2E2E"
-    android:textColor="#FFFFFF">
+    android:background="@drawable/border"
+    android:textColor="#FFFFFF"
+    android:outlineSpotShadowColor="#FFFFFF"
+    android:outlineAmbientShadowColor="#FFFFFF">
 </TextView>
