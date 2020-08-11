@@ -252,17 +252,18 @@ public class MainActivity extends AppCompatActivity {
         if(mediaPlayer != null)
         {
             new Thread(new Runnable() {
-                @SuppressLint("SetTextI18n")
                 @Override
                 public void run() {
-                    Log.i("Thread", "Got in");
-                    for (int i = 0; i < duration.getMax(); i += 1000) {
+                    while (mediaPlayer != null) {
                         try {
-                            Thread.sleep(1000);
-                            int current = duration.getProgress();
-                            i = Math.max(current, i);
-                            duration.setProgress(i);
-                            Log.i("Thread", "Woke up");
+//                        Log.i("Thread ", "Thread Called");
+                            // create new message to send to handler
+                            if (mediaPlayer.isPlaying()) {
+                                Message msg = new Message();
+                                msg.what = mediaPlayer.getCurrentPosition();
+                                handler.sendMessage(msg);
+                                Thread.sleep(1000);
+                            }
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -270,9 +271,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }).start();
         }
-
     }
-
+    @SuppressLint("HandlerLeak")
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            int current_position = msg.what;
+            duration.setProgress(current_position);
+            String cTime = setCurrentTime(current_position);
+            time.setText(cTime);
+        }
+    };
     @SuppressLint("SetTextI18n")
     void durationSetting(int d) {
         int min = d / 1000 / 60;
@@ -281,7 +290,12 @@ public class MainActivity extends AppCompatActivity {
         duration.setMax(d / 1000);
     }
 
-
+    String setCurrentTime(int progress)
+    {
+        String min = String.valueOf(progress / 1000 / 60);
+        String sec = progress / 1000 % 60 > 10 ? String.valueOf(progress / 1000 % 60) : "0" +  String.valueOf(progress / 1000 % 60);
+        return min + ":" + sec;
+    }
 
     static class MusicAdapter extends BaseAdapter {
         private List<String> musicFiles = new ArrayList<>();
