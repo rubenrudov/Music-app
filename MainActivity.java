@@ -120,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
         });
         songList = findViewById(R.id.SongListView);
         time = findViewById(R.id.TimePassed);
-        time.setText("0:0");
         durationText = findViewById(R.id.DurationText);
         duration = findViewById(R.id.Duration);
         duration.setProgress(0);
