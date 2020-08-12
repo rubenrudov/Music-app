@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                     if(fromUser) {
                         mediaPlayer.seekTo(progress);
                         duration.setProgress(progress);
-                        String digs = progress/ 1000 % 60 >= 10 ? String.valueOf(progress/ 1000 % 60) : "0" + progress / 1000 % 60;
+                        String digs = progress/ 1000 % 60 > 10 ? String.valueOf(progress/ 1000 % 60) : "0" + progress / 1000 % 60;
                         time.setText(progress / 60000 + ":" + digs);
                     }
                 }
@@ -171,7 +171,6 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                     try {
-                        time.setText("0:0");
                         duration.setProgress(0);
                         play(position);
                     } catch (IOException e) {
@@ -292,7 +291,7 @@ public class MainActivity extends AppCompatActivity {
     String setCurrentTime(int progress)
     {
         String min = String.valueOf(progress / 1000 / 60);
-        String sec = progress / 1000 % 60 > 10 ? String.valueOf(progress / 1000 % 60) : "0" +  String.valueOf(progress / 1000 % 60);
+        String sec = progress / 1000 % 60 >= 10 ? String.valueOf(progress / 1000 % 60) : "0" +  String.valueOf(progress / 1000 % 60);
         return min + ":" + sec;
     }
 
